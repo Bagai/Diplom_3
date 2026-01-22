@@ -1,21 +1,14 @@
-# import pytest
 from data import (
     url_login_page,
-    url_forgot_password_page,
-    url_reset_password_page,
     url_main_page,
-    url_personal_account_page,
     url_order_history_page,
     email,
     password,
 )
 from pages.login_page import LoginPage
-from pages.restore_password_page import RestorePasswordPage
-from pages.reset_password_page import ResetPasswordPage
 from pages.header_page import HeaderPage
 from pages.main_page import MainPage
 from pages.personal_account_page import PersonalAccountPage
-from pages.order_history_page import OrderHistoryPage
 
 
 class TestPersonalAccount:

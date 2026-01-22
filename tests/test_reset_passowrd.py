@@ -1,4 +1,3 @@
-# import pytest
 from data import (
     url_login_page,
     url_forgot_password_page,
