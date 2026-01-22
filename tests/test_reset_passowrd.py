@@ -16,7 +16,7 @@ class TestResetPassword:
         loginPage = LoginPage(driver)
         loginPage.go_to_url(url_login_page)
         loginPage.click_on_button_restore_password()
-        assert driver.current_url == url_forgot_password_page
+        assert loginPage.get_url() == url_forgot_password_page
 
     def test_enter_email_and_click_restore_password_button_success(self, driver):
         restorePasswordPage = RestorePasswordPage(driver)
@@ -24,7 +24,7 @@ class TestResetPassword:
         restorePasswordPage.fill_in_email_field(email)
         restorePasswordPage.click_on_button_restore_password()
         ResetPasswordPage(driver).is_elemnt_enter_code_is_visible()
-        assert driver.current_url == url_reset_password_page
+        assert restorePasswordPage.get_url() == url_reset_password_page
 
     def test_click_restore_password_button_success(self, driver):
         loginPage = LoginPage(driver)

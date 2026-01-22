@@ -59,3 +59,6 @@ class BasePage:
     def click_on_element_after_layout_hide(self, locator, locator_click):
         self.wait.until_not(ex.visibility_of_element_located(locator))
         self.click_element(locator_click)
+
+    def get_url(self):
+        return self.driver.current_url

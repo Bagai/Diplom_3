@@ -26,12 +26,12 @@ class TestResetPassword:
     def test_open_constructor(self, driver):
         LoginPage(driver).go_to_url(url_login_page)
         HeaderPage(driver).click_on_button_constructor()
-        assert driver.current_url == url_main_page
+        assert HeaderPage(driver).get_url() == url_main_page
 
     def test_open_order_feed(self, driver):
         LoginPage(driver).go_to_url(url_login_page)
         HeaderPage(driver).click_on_button_order_feed()
-        assert driver.current_url == url_order_feed_page
+        assert HeaderPage(driver).get_url() == url_order_feed_page
 
     def test_open_ingredients_details(self, driver):
         main_page = MainPage(driver)

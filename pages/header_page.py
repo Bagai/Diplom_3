@@ -5,11 +5,14 @@ import allure
 
 class HeaderPage(BasePage):
     
+    @allure.step('Click on button personal account')
     def click_on_button_personal_account(self):
         self.click_element(HaderLocators.BUTTON_PERSONAL_ACCOUNT_XPATH)
 
+    @allure.step('Click on button constructor')
     def click_on_button_constructor(self):
         self.click_element(HaderLocators.BUTTON_CONSTRUCTOR_XPATH)
 
+    @allure.step('Click on button order feed')
     def click_on_button_order_feed(self):
         self.click_element(HaderLocators.BUTTON_ORDER_FEED_XPATH)

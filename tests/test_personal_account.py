@@ -25,7 +25,7 @@ class TestPersonalAccount:
         header_page = HeaderPage(driver)
         main_page.go_to_url(url_main_page)
         header_page.click_on_button_personal_account()
-        assert driver.current_url == url_login_page
+        assert main_page.get_url() == url_login_page
 
     def test_open_order_history(self, driver):
         login_page = LoginPage(driver)
@@ -36,7 +36,7 @@ class TestPersonalAccount:
         HeaderPage(driver).click_on_button_personal_account()
         pa_page = PersonalAccountPage(driver)
         pa_page.click_history_button()
-        assert driver.current_url == url_order_history_page
+        assert pa_page.get_url() == url_order_history_page
 
     def test_logout(self, driver):
         login_page = LoginPage(driver)
@@ -47,5 +47,4 @@ class TestPersonalAccount:
         HeaderPage(driver).click_on_button_personal_account()
         PersonalAccountPage(driver).click_logout_button()
         LoginPage(driver).is_restore_password_button_displayed()
-        assert driver.current_url == url_login_page
-    
+        assert login_page.get_url() == url_login_page
