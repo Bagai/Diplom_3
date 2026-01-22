@@ -20,32 +20,32 @@ from pages.order_history_page import OrderHistoryPage
 
 class TestPersonalAccount:
 
-    # def test_open_personal_account(self, driver):
-    #     main_page = MainPage(driver)
-    #     header_page = HeaderPage(driver)
-    #     main_page.go_to_url(url_main_page)
-    #     header_page.click_on_button_personal_account()
-    #     assert driver.current_url == url_login_page
+    def test_open_personal_account(self, driver):
+        main_page = MainPage(driver)
+        header_page = HeaderPage(driver)
+        main_page.go_to_url(url_main_page)
+        header_page.click_on_button_personal_account()
+        assert driver.current_url == url_login_page
 
-    # def test_open_order_history(self, driver):
-    #     login_page = LoginPage(driver)
-    #     login_page.go_to_url(url_login_page)
-    #     login_page.fill_in_email_field(email)
-    #     login_page.fill_in_password_field(password)
-    #     login_page.click_on_button_login()
-    #     HeaderPage(driver).click_on_button_personal_account()
-    #     pa_page = PersonalAccountPage(driver)
-    #     pa_page.click_history_button()
-    #     assert driver.current_url == url_order_history_page
+    def test_open_order_history(self, driver):
+        login_page = LoginPage(driver)
+        login_page.go_to_url(url_login_page)
+        login_page.fill_in_email_field(email)
+        login_page.fill_in_password_field(password)
+        login_page.click_on_button_login()
+        HeaderPage(driver).click_on_button_personal_account()
+        pa_page = PersonalAccountPage(driver)
+        pa_page.click_history_button()
+        assert driver.current_url == url_order_history_page
 
-    # def test_logout(self, driver):
-    #     login_page = LoginPage(driver)
-    #     login_page.go_to_url(url_login_page)
-    #     login_page.fill_in_email_field(email)
-    #     login_page.fill_in_password_field(password)
-    #     login_page.click_on_button_login()
-    #     HeaderPage(driver).click_on_button_personal_account()
-    #     PersonalAccountPage(driver).click_logout_button()
-    #     LoginPage(driver).is_restore_password_button_displayed()
-    #     assert driver.current_url == url_login_page
-    pass
+    def test_logout(self, driver):
+        login_page = LoginPage(driver)
+        login_page.go_to_url(url_login_page)
+        login_page.fill_in_email_field(email)
+        login_page.fill_in_password_field(password)
+        login_page.click_on_button_login()
+        HeaderPage(driver).click_on_button_personal_account()
+        PersonalAccountPage(driver).click_logout_button()
+        LoginPage(driver).is_restore_password_button_displayed()
+        assert driver.current_url == url_login_page
+    
