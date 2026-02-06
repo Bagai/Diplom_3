@@ -16,11 +16,11 @@ import time
 
 class TestOrderFeed:
 
-    # def test_open_order_details(self, driver):
-    #     order_page = OrderFeedPage(driver)
-    #     order_page.go_to_url(url_order_feed_page)
-    #     order_page.click_on_order()
-    #     assert order_page.check_modal_is_opened()
+    def test_open_order_details(self, driver):
+        order_page = OrderFeedPage(driver)
+        order_page.go_to_url(url_order_feed_page)
+        order_page.click_on_order()
+        assert order_page.check_modal_is_opened()
 
     def test_user_orders_displayes_at_order_feed(self, driver):
         login_page = LoginPage(driver)
