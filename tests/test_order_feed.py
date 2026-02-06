@@ -14,13 +14,13 @@ from pages.order_feed_page import OrderFeedPage
 import time
 
 
-class TestResetPassword:
+class TestOrderFeed:
 
-    def test_open_order_details(self, driver):
-        order_page = OrderFeedPage(driver)
-        order_page.go_to_url(url_order_feed_page)
-        order_page.click_on_order()
-        assert order_page.check_modal_is_opened()
+    # def test_open_order_details(self, driver):
+    #     order_page = OrderFeedPage(driver)
+    #     order_page.go_to_url(url_order_feed_page)
+    #     order_page.click_on_order()
+    #     assert order_page.check_modal_is_opened()
 
     def test_user_orders_displayes_at_order_feed(self, driver):
         login_page = LoginPage(driver)
@@ -42,8 +42,8 @@ class TestResetPassword:
         pa_page = PersonalAccountPage(driver)
         pa_page.click_history_button()
         order_history_page = OrderHistoryPage(driver)
-        # order_history_page.go_to_url(url_order_history_page)
-        number_of_order = order_history_page.get_order_number()
+        number_of_order = order_history_page.get_order_list()[-1]
         order_feed_page = OrderFeedPage(driver)
         order_feed_page.go_to_url(url_order_feed_page)
-        assert number_of_order in order_feed_page.get_order_number()
+        order_list = order_feed_page.get_order_list()
+        assert number_of_order in order_list

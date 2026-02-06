@@ -31,3 +31,7 @@ class OrderFeedPage(BasePage):
     @allure.step('Check if order is in progress')
     def check_isorder_in_progress(self, order_number):
         return self.get_element_text(OrderFeedPageLocators.ORDER_FEED_ORDER_NUMBER_ELEMENT_XPATH) == order_number
+    
+    @allure.step('Get order list')
+    def get_order_list(self):
+        return self.get_elemnts_text_list(OrderFeedPageLocators.ORDER_FEED_ORDER_NUMBER_ELEMENT_XPATH)

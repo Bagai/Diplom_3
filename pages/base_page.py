@@ -22,15 +22,22 @@ class BasePage:
         self.wait.until(ex.visibility_of_element_located(locator))
         return self.driver.find_element(*locator)
 
+    def find_elements_with_wait(self, locator):
+        self.wait.until(ex.visibility_of_element_located(locator))
+        return self.driver.find_elements(*locator)
+
     def add_text_to_element(self, locator, text):
         self.find_element_with_wait(locator).send_keys(text)
 
-    # def format_locator(self, locator, num_of_qa):
-    #     method, unpack_locator = locator
-    #     return (method, unpack_locator.format(num_of_qa))
-
     def get_element_text(self, locator):
         return self.find_element_with_wait(locator).text
+    
+    def get_elemnts_text_list(self, locator):
+        elements = self.find_elements_with_wait(locator)
+        text_elemnts_list = []
+        for el in elements:
+            text_elemnts_list.append(el.text)
+        return text_elemnts_list
 
     def scroll_to_element(self, locator):
         self.driver.execute_script(
@@ -47,8 +54,6 @@ class BasePage:
         except TimeoutException:
             return False
 
-    # def open_last_tab(self):
-    #     self.driver.switch_to("-1")
 
     def drag_and_drop(self, locator_of_elemnt_to_drag, locaor_of_elemnt_to_drop):
         drag_element = self.driver.find_element(*locator_of_elemnt_to_drag)

@@ -12,7 +12,7 @@ class OrderFeedPageLocators:
     )
     ORDER_FEED_ORDER_NUMBER_ELEMENT_XPATH = (
         By.XPATH,
-        ".//ul[contains(@class, 'OrderFeed_list')]/li[1]/a/div/p[1]",
+        ".//ul[contains(@class, 'OrderFeed_list')]/li/a/div/p[1]",
     )
     TOTAL_NUMBER_ALL_TIME_ELEMENT_XPATH = (
         By.XPATH,
